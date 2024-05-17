@@ -8,7 +8,7 @@ function Home() {
     const [cardsData, setCardsData] = useState([]);
     // Fetch data from the API
     useEffect(() => {
-        fetch("http://localhost:5000/api/cards")
+        fetch("https://app-api.tinkerhub.org/checkin/active")
             .then((response) => response.json())
             .then((data) => {
                 setCardsData(data);
