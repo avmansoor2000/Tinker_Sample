@@ -1,12 +1,11 @@
-import './App.css'
-import Home from './pages/Home/Home'
+import React from 'react'
+import Card from './card'
 
-function App() {
-
+const App = () => {
   return (
-  <div>
-      <Home/>
-  </div>
+    <>
+        <Card/>
+    </>
   )
 }
 

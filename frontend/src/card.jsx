@@ -1,9 +1,9 @@
-// import './App.css'
+import './card.css'
 import { useEffect, useState } from 'react'
-import scanCodeImage from '../../assets/images/scan_code.png';
-import test from '../../assets/images/test.png';
+import scanCodeImage from './assets/images/scan_code.png';
+import test from './assets/images/test.jpg';
 
-function Home() {
+function Card() {
 
     const [cardsData, setCardsData] = useState([]);
     // Fetch data from the API
@@ -68,4 +68,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Card
