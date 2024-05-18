@@ -28,7 +28,7 @@ function Card() {
 
                         <div className="right_div_inside1">
                             <div className='scan_box'>
-                                <img src={scanCodeImage} alt="Example" />
+                                <img src={scanCodeImage} alt="Scan Code" />
                                 <div className="scan_box1">
                                     <p>DON’T SEE YOUR NAME?</p>
                                     <h2>
