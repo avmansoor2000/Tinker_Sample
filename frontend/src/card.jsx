@@ -1,6 +1,6 @@
 import './card.css'
 import { useEffect, useState } from 'react'
-import scanCodeImage from './assets/images/scan_code.png';
+// import scanCodeImage from './assets/images/scan_code.png';
 import test from './assets/images/test.jpg';
 
 function Card() {
@@ -28,7 +28,7 @@ function Card() {
 
                         <div className="right_div_inside1">
                             <div className='scan_box'>
-                                <img src={scanCodeImage} alt="Scan Code" />
+                                {/* <img src={scanCodeImage} alt="Scan Code" /> */}
                                 <div className="scan_box1">
                                     <p>DON’T SEE YOUR NAME?</p>
                                     <h2>
