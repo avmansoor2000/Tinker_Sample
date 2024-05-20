@@ -45,7 +45,7 @@ h5 {
   line-height: 10.8px;
   letter-spacing: -0.01em;
   text-align: left;
-  padding-bottom: 392px;
+  /*padding-bottom: 392px;*/
   color: #A3A3A3;
 
 }
@@ -62,11 +62,13 @@ h5 {
 
 .right_div {
   /* position: fixed; */ 
-  width: 246px;
-  /* width: 20%; */
-  height: 720px;
+  /*width: 246px;
+  height: 720px; */
   /* background: #e28282; */
   /* margin: 32px 24px 32px 24px; */
+  width: 286px;
+  height: 1090px;
+  background-color: red;
 }
 
 .right_div_inside {
@@ -124,6 +126,8 @@ h5 {
   border-width: 0.6px;
   border-color: #DEDEDE;
   border-style: solid;
+  margin-top: 730px;
+  justify-content: center;
 
 }
 
