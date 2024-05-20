@@ -61,8 +61,9 @@ h5 {
 }
 
 .right_div {
-  /* position: fixed; */
+  /* position: fixed; */ 
   width: 246px;
+  /* width: 20%; */
   height: 720px;
   /* background: #e28282; */
   /* margin: 32px 24px 32px 24px; */
