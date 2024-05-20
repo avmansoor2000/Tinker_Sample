@@ -47,16 +47,6 @@ function Card() {
               </div>
             </div>
 
-
-              <div className="card_box">
-                <img src={test} alt="Example" />
-                <span className="mentor_tag">MENTOR</span>
-                <div className="name_text">
-                  <h3>DARLENE <br /> ROBERTSON </h3>
-                  <p>OUT IN 2 MIN</p>
-                </div>
-              </div>
-
             <div className="card_box">
               <img src={test} alt="Example" />
               <span className="mentor_tag">MENTOR</span>
@@ -64,7 +54,7 @@ function Card() {
                 <h3>DARLENE <br /> ROBERTSON </h3>
                 <p>OUT IN 2 MIN</p>
               </div>
-            </div> 
+            </div>
 
             <div className="card_box">
               <img src={test} alt="Example" />
@@ -145,14 +135,6 @@ function Card() {
 
           <div className='card_row_1'>
 
-          <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
             <div className="card_box">
               <img src={test} alt="Example" />
               <div className="name_text">
@@ -161,13 +143,6 @@ function Card() {
               </div>
             </div>
 
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
 
             <div className="card_box">
               <img src={test} alt="Example" />
@@ -176,153 +151,6 @@ function Card() {
                 <p>OUT IN 2 MIN</p>
               </div>
             </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-          </div>
-
-   
-
-
-          <div className='card_row_1'>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-            <div className="card_box">
-              <img src={test} alt="Example" />
-              <div className="name_text">
-                <h3>DARLENE <br /> ROBERTSON </h3>
-                <p>OUT IN 2 MIN</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div className='card_row_1'>
 
             <div className="card_box">
               <img src={test} alt="Example" />
@@ -408,7 +236,298 @@ function Card() {
 
 
 
+
           <div className='card_row_1'>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div className='card_row_1'>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <div className='card_row_1'>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div className='card_row_1'>
+
+            <div className="card_box">
+              <img src={test} alt="Example" />
+              <div className="name_text">
+                <h3>DARLENE <br /> ROBERTSON </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
+            </div>
+
 
             <div className="card_box">
               <img src={test} alt="Example" />
