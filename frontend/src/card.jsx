@@ -10,8 +10,8 @@ function Card() {
         <div className="right_div">
           <div className="right_div_inside">
 
-            <h1> meet & greet</h1>
-            <h2>SAY 👋🏻 TO THIS AWESOME MAKERS</h2>
+            <h1> Meet & Greet</h1>
+            <h2>SAY 👋🏻 TO THIS <br /> AWESOME MAKERS</h2>
             <h5>17 MAKERS IN NOW</h5>
 
             <div className="right_div_inside1">
@@ -134,7 +134,7 @@ function Card() {
 
 
           <div className='card_row_1'>
-            
+
             <div className="card_box">
               <img src={test} alt="Example" />
               <div className="name_text">
