@@ -3,7 +3,6 @@
 }
 
 h1 {
-  font-family: Instrument Serif;
   font-size: 35px;
   font-style: italic;
   font-weight: 400;
@@ -15,7 +14,6 @@ h1 {
 }
 
 h2 {
-  font-family: Clash Display;
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -27,7 +25,6 @@ h2 {
 }
 
 h3 {
-  font-family: Clash Display;
   font-size: 12px;
   font-weight: 600;
   line-height: 12px;
@@ -39,7 +36,7 @@ h3 {
 }
 
 h5 {
-  font-family: Clash Display;
+  /* font-family: Clash Display; */
   font-size: 12px;
   font-weight: 500;
   line-height: 10.8px;
@@ -52,22 +49,13 @@ h5 {
 
 .TV_fixed {
   width: 1280px;
-  height: 720px;
+  /* height: 720px; */
+  height: 1090px;
   /* background: #73f084; */
   display: flex;
   padding: 6px;
 
 
-}
-
-.right_div {
-  /* position: fixed; */ 
-  /*width: 246px;
-  height: 720px; */
-  /* background: #e28282; */
-  /* margin: 32px 24px 32px 24px; */
-  width: 286px;
-  height: 1090px;
 }
 
 .right_div_inside {
@@ -80,8 +68,6 @@ h5 {
 
 
 }
-
-/* .right_div_inside h1 {} */
 
 .right_div_inside1 {
   width: 198px;
@@ -111,9 +97,6 @@ h5 {
   text-align: left;
 
 }
-
-
-
 
 .scan_box {
   width: 198px;
@@ -150,15 +133,12 @@ h5 {
   border-radius: 14px;
   /* background: #e6ea0a; */
   background: radial-gradient(circle at center, #FFF6A5 0%, #FFD43B 100%);
-
   font-family: Clash Display;
   font-size: 6px;
   font-weight: 600;
   line-height: 5.4px;
   position: absolute;
   margin: 109px -57px;
-
-
 }
 
 .scan_box1 {
@@ -177,12 +157,15 @@ h5 {
 
 }
 
-.left_div {
-  width: 1022px;
-  height: 720px;
+.card_container {
+  /* height: 720px; */
+  width: 800;
   /* background: #ef8ee5; */
-  /* display: flex; */
+}
 
+.card_row{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card_box {
@@ -192,11 +175,9 @@ h5 {
   /* margin: 1px; */
   /* border-radius: 12px; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
   border-width: 0.6px;
   border-color: #EBEBEB;
   border-style: solid;
-  
   /* gap: 16px; */
   /* border: 0.5px 0px 0px 0px; */
   /* opacity: 0px; */
@@ -214,7 +195,6 @@ h5 {
   height: 39px;
   /* justify: space-between; */
   /* padding: 0 0 0 6px; */
-
 }
 
 .name_text p {
@@ -226,10 +206,4 @@ h5 {
   text-align: left;
   padding-left: 6px;
   color: #FD9800;
-  ;
-
-}
-
-.card_row_1 {
-  display: flex;
 }
