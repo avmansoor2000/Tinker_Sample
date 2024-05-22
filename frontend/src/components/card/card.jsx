@@ -81,7 +81,12 @@ function Card() {
               
             </div>
             <div className="card_box" onClick={() => toggleCardFlip(index)}>
-              <h1>card</h1>
+            <img src={test} alt="Example" />
+              <span className="mentor_tag">MENTOR</span>
+              <div className="name_text">
+                <h3>{card.name} </h3>
+                <p>OUT IN 2 MIN</p>
+              </div>
             </div>
             </ReactCardFlip>
             ))}
