@@ -1,9 +1,37 @@
 import './card.css'
+import { useState,useEffect } from 'react';
+import ReactCardFlip from 'react-card-flip';
 import scanCodeImage from '../../assets/images/scan_code.png';
 import test from '../../assets/images/test.jpg';
 import cardData from '../../assets/user.json';
 
 function Card() {
+
+  const [flippedStates, setFlippedStates] = useState([]);
+
+  useEffect(() => {
+    // Initialize flippedStates array with false values for each card
+    setFlippedStates(Array(cardData.length).fill(false));
+  }, []);
+
+  useEffect(() => {
+    // Automatically flip cards every 10 seconds
+    const interval = setInterval(() => {
+      setFlippedStates(prevStates =>
+        prevStates.map(state => !state)
+      );
+    }, 10000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
+  function toggleCardFlip(index) {
+    setFlippedStates(prevStates => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  }
 
   return (
     <>
@@ -38,7 +66,11 @@ function Card() {
           <div className="card_row">
 
               {/* cards */}
-              {cardData.map(card => (
+              {cardData.map((card,index) => (
+                <ReactCardFlip key={index}
+                flipDirection="vertical"
+                isFlipped={flippedStates[index]}
+                onDoubleClick={() => toggleCardFlip(index)}>
                 <div className="card_box">
               <img src={test} alt="Example" />
               <span className="mentor_tag">MENTOR</span>
@@ -46,7 +78,12 @@ function Card() {
                 <h3>{card.name} </h3>
                 <p>OUT IN 2 MIN</p>
               </div>
+              
             </div>
+            <div className="card_box" onClick={() => toggleCardFlip(index)}>
+              <h1>doji</h1>
+            </div>
+            </ReactCardFlip>
             ))}
             </div>
 
