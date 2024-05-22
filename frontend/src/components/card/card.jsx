@@ -81,7 +81,7 @@ function Card() {
               
             </div>
             <div className="card_box" onClick={() => toggleCardFlip(index)}>
-              <h1>doji</h1>
+              <h1>card</h1>
             </div>
             </ReactCardFlip>
             ))}
