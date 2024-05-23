@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import scanCodeImage from '../../assets/images/scan_code.png';
 import test from '../../assets/images/test.jpg';
+import steve_2 from '../../assets/images/steve_2.webp'
 import cardData from '../../assets/user.json';
 
 function Card() {
@@ -81,7 +82,7 @@ function Card() {
               
             </div>
             <div className="card_box" onClick={() => toggleCardFlip(index)}>
-            <img src={test} alt="Example" />
+            <img src={steve_2} alt="Example" />
               <span className="mentor_tag">MENTOR</span>
               <div className="name_text">
                 <h3>{card.name} </h3>
