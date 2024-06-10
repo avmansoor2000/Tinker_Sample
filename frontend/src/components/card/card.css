@@ -2,7 +2,6 @@
   margin: 0px;
 }
 
-
 h1 {
   font-size: 35px;
   font-style: italic;
@@ -11,7 +10,6 @@ h1 {
   letter-spacing: -0.03em;
   text-align: left;
   padding-bottom: 32px;
-
 }
 
 h2 {
@@ -21,8 +19,6 @@ h2 {
   letter-spacing: -0.01em;
   text-align: left;
   padding-bottom: 16px;
-
-
 }
 
 h3 {
@@ -32,8 +28,6 @@ h3 {
   letter-spacing: -0.01em;
   text-align: left;
   padding: 0 0 10px 6px;
-
-
 }
 
 h5 {
@@ -45,14 +39,8 @@ h5 {
   text-align: left;
   /*padding-bottom: 392px;*/
   color: #A3A3A3;
-
 }
 
-
-
-/* .img_div {
-  position: relative;;
-} */
 .mentor_tag {
   width: 28px;
   height: 6px;
@@ -112,7 +100,6 @@ h5 {
   /* opacity: 0px; */
   /* background: #e87474; */
   margin: 4px;
-
 }
 
 .card_box img {
@@ -120,9 +107,7 @@ h5 {
   /* height: 110px; */
   width: 100%;
   height: 70%;
-
-
-  /* padding: 6px 6px 16px 6px; */
+  object-fit: cover;
 }
 
 .name_text {
@@ -142,9 +127,6 @@ h5 {
   padding-left: 6px;
   color: #FD9800;
 }
-
-
-
 
 
 /*extra css */
