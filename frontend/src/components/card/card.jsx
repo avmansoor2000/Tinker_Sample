@@ -1,11 +1,6 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { useSpring, animated } from 'react-spring';
 import './card.css'
-// import { withStyles } from "@mui/styles";
-// import CardMedia from "@mui/material/CardMedia";
-// import Fade from "@mui/material/Fade";
-// import test from '../../assets/images/test.jpg';
-// import steve_2 from '../../assets/images/steve_2.webp'
 
 function Card({ person, extraPerson, isFlipped, isVanishing }) {
 
@@ -24,6 +19,23 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
     config: { duration: 1000 }
   });
 
+
+  const [remainingTime, setRemainingTime] = useState("");
+
+  useEffect(() => {
+    if (person.checkOutTime) {
+      const checkoutTime = new Date(person.checkOutTime);
+      const currentTime = new Date();
+
+      const diffMilliseconds = checkoutTime - currentTime;
+      const diffMinutes = Math.floor(diffMilliseconds / (1000 * 60));
+
+      setRemainingTime(`OUT IN ${diffMinutes} MIN`);
+    }
+  }, [person.checkOutTime]);
+
+
+
   return (
     <>
       {/* ############################################################### */}
@@ -38,12 +50,11 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
         <animated.div className="card front" style={{ ...vanishingStyle, opacity: opacity.interpolate(o => 1 - o), transform }}>
           <div className="card_box">
             <img src={person.avatar} alt="Example" />
-            <span className="mentor_tag">MENTOR</span>
+            <span className="mentor_tag">{person.isMentor ? "Mentor" : "Mentee"}</span>
             <div className="name_text">
               <h3>{person.name}</h3>
-              <p>OUT IN 2 MIN</p>
+              <p>OUT IN {remainingTime} MIN</p>
             </div>
-            {/* Extra Cards */}
           </div>
         </animated.div>
 
@@ -52,10 +63,10 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
           <animated.div className="card back" style={{ ...vanishingStyle, opacity, transform: transform.interpolate(t => `${t} rotateY(180deg)`) }}>
             <div className="card_box" >
               <img src={extraPerson.avatar} alt="Example" />
-              <span className="mentor_tag">MENTOR</span>
+              <span className="mentor_tag">{extraPerson.isMentor ? "Mentor" : "Mentee"}</span>
               <div className="name_text">
                 <h3>{extraPerson.name}</h3>
-                <p>OUT IN 2 MIN</p>
+                <p>OUT IN {remainingTime} MIN</p>
               </div>
             </div>
           </animated.div>

@@ -1,12 +1,16 @@
 // fetchData.js
 export async function fetchData() {
     try {
-      const response = await fetch('http://localhost:4000/');
+      const response = await fetch('https://app-api.tinkerhub.org/checkin/active');
       if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
       }
-      const result = await response.json();
-      const data = result.data;
+      
+      const data = await response.json();
+      console.log(data);
+      // console.log();
+      // console.log(result,'result');
+      // const data = result.data;
   
       // Assuming you want to split the data into two equal parts
       // const midIndex = Math.floor(data.length / 2);

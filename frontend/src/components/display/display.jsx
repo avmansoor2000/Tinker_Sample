@@ -3,22 +3,12 @@ import './display.css'
 import React, { useState, useEffect, useRef } from 'react';
 import scanCodeImage from '../../assets/images/scan_code.png';
 import { fetchData } from "../../api/fetchData"
-// import InfinityGauntlet from "react-thanos-snap";
-// import { Thanos } from "react-thanos";
-// import ReactCardFlip from 'react-card-flip';
-// import Thanos from "react-thanos-snap"
-// import frontData from "../data/frontData.json";
-// import backData from "../data/backData.json";
-// import test from '../../assets/images/test.jpg'
 
 
 function Display() {
 
-  // const [people, setPeople] = useState([]);
-  // const [extraPeople, setExtraPeople] = useState([]);
   const peopleRef = useRef([]);
   const extraPeopleRef = useRef([]);
-  // const [snap, setSnap] = useState(false);
   const [vanishingIndices, setVanishingIndices] = useState([]);
   const [flipStates, setFlipStates] = useState([]);
   const [members, setMembers] = useState(0);
@@ -29,6 +19,7 @@ function Display() {
   useEffect(() => {
     async function getData() {
       const { frontData, backData, totalMembers } = await fetchData();
+      // console.log(frontData, "fornt Data");
       peopleRef.current = frontData;
       extraPeopleRef.current = backData;
       // console.log(frontData,'frontData');
@@ -45,78 +36,54 @@ function Display() {
 
 
   // Set up useEffect to handle auto-flipping cards
-  useEffect(() => {
-    const flipCard = (index) => {
-      console.log(index+'index');
-      // Set the flip state of the card at the given index to true
+useEffect(() => {
+  if (extraPeopleRef.current && extraPeopleRef.current.length > 35) {
+          const flipCard = (index) => {
+    console.log(index + ' index');
+    
+    // Set the flip state of the card at the given index to true
+    setFlipStates((prevFlipStates) => {
+      const newFlipStates = [...prevFlipStates];
+      newFlipStates[index] = true;
+      return newFlipStates;
+    });
+
+    // After 30 seconds, set the flip state of the card back to false
+    setTimeout(() => {
       setFlipStates((prevFlipStates) => {
         const newFlipStates = [...prevFlipStates];
-        newFlipStates[index] = true;
-        // console.log(newFlipStates);
+        newFlipStates[index] = false;
         return newFlipStates;
-      })
+      });
+    }, 30000);
+  };
 
-      // After 20 seconds, set the flip state of the card back to false
+  let currentIndex = 0;
+  let interval;
+  const flipNextCard = () => {
+    flipCard(currentIndex);
+    currentIndex = (currentIndex + 1) % extraPeopleRef.current.length;
+    
+    if (currentIndex === 0) {
+      clearInterval(interval);
       setTimeout(() => {
-        // console.log('30seconds setTimeout worked');
-        // interval()
-        setFlipStates((prevFlipStates) => {
-          // console.log(prevFlipStates,'prevFlipStates');
-          const newFlipStates = [...prevFlipStates];
-          newFlipStates[index] = false;
-         
-          return newFlipStates;
-        });
+        interval = setInterval(flipNextCard, 1000);
       }, 30000);
-      return () => clearInterval(interval);
-    };
+    }
+  };
 
-    let currentIndex = 0;
-    // Set up an interval to flip cards every 5 seconds
-    const interval = setInterval(() => {
-      flipCard(currentIndex);
-      console.log(currentIndex,'currentIndex');
-      currentIndex = (currentIndex + 1) % extraPeopleRef.current.length;
-      // console.log(currentIndex,'currentIndex');
-    }, 1000); // Flip each card every 5 seconds
+  // Set up an interval to flip cards every 1 second
+  interval = setInterval(flipNextCard, 1000);
 
-    // Clean up the interval on component unmount
-   return () => clearInterval(interval)
-  }, []);
-
-
-
-  // const handleSnap = () => {
-  //   setSnap(true);
-  //   const indicesToVanish = [0, 1]; 
-  //   setVanishingIndices(indicesToVanish);
-
-  //   setTimeout(() => {
-  //     setPeople((prevPeople) => prevPeople.filter((_, index) => !indicesToVanish.includes(index)));
-  //     setExtraPeople((prevExtraPeople) => prevExtraPeople.filter((_, index) => !indicesToVanish.includes(index)));
-  //     setFlipStates((prevFlipStates) => prevFlipStates.filter((_, index) => !indicesToVanish.includes(index)));
-  //     setVanishingIndices([]);
-  //     setSnap(false);
-  //   }, 1000);
-  // };
+  // Clean up the interval on component unmount
+  return () => clearInterval(interval);
+}
+}, []);
 
 
 
   return (
     <>
-      {/* <div>
-        <button onClick={handleSnap}>Snap!</button>
-        <Thanos snap={snap}>
-          <div className="card_box" >
-            <img src={test} alt="Example" />
-            <span className="mentor_tag">MENTOR</span>
-            <div className="name_text">
-              <h3>Steve Jobs</h3>
-              <p>OUT IN 2 MIN</p>
-            </div>
-          </div>
-        </Thanos>
-      </div> */}
 
 
       <div className="TV_fixed">
@@ -151,10 +118,8 @@ function Display() {
 
             {peopleRef.current.map((person, index) => (
               // <Thanos snap={snap}>
-
-
               <Card
-                key={person.mid}
+                key={person.id}
                 person={person}
                 extraPerson={extraPeopleRef.current[index]}
                 isFlipped={flipStates[index]}
