@@ -1,11 +1,14 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import './card.css'
+import temp_avatar from '../../assets/images/avatar.jpg'
 
 function Card({ person, extraPerson, isFlipped, isVanishing }) {
 
+  const [showPurpose, setShowPurpose] = useState(true);
 
 
+  // Flip Effect
   const { transform, opacity } = useSpring({
     opacity: isFlipped ? 1 : 0,
     transform: `rotateY(${isFlipped ? 180 : 0}deg)`,
@@ -19,7 +22,7 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
     config: { duration: 1000 }
   });
 
-
+  // Calculate Time
   const [remainingTime, setRemainingTime] = useState("");
 
   useEffect(() => {
@@ -30,30 +33,38 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
       const diffMilliseconds = checkoutTime - currentTime;
       const diffMinutes = Math.floor(diffMilliseconds / (1000 * 60));
 
-      setRemainingTime(`OUT IN ${diffMinutes} MIN`);
+      setRemainingTime(`${diffMinutes} `);
     }
   }, [person.checkOutTime]);
+
+  useEffect(() => {
+    // Check if remainingTime is less than 5 minutes
+    if (remainingTime < 5) {
+      setShowPurpose(false); // Hide purpose
+    } else {
+      setShowPurpose(true); // Show purpose
+    }
+  }, [remainingTime]);
 
 
 
   return (
     <>
-      {/* ############################################################### */}
-      {/* <div className="card_container">
-        <div className="card_row"> */}
-
-      {/* cards */}
-
 
       <div className="card-container">
 
         <animated.div className="card front" style={{ ...vanishingStyle, opacity: opacity.interpolate(o => 1 - o), transform }}>
-          <div className="card_box">
-            <img src={person.avatar} alt="Example" />
-            <span className="mentor_tag">{person.isMentor ? "Mentor" : "Mentee"}</span>
+          <div className="card_box" style={{ textTransform: 'uppercase' }} >
+            <img src={person.avatar || temp_avatar} alt="Example" />
+            <div className="mentor_tag">
+              <span >{person.isMentor ? "Mentor" : "Mentee"}</span>
+            </div>
             <div className="name_text">
-              <h3>{person.name}</h3>
-              <p>OUT IN {remainingTime} MIN</p>
+              <h2>{person.name}</h2>
+              <div>
+                {showPurpose && <p className='purpose'>{person.purpose}</p>}
+                {!showPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
+              </div>
             </div>
           </div>
         </animated.div>
@@ -66,16 +77,16 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
               <span className="mentor_tag">{extraPerson.isMentor ? "Mentor" : "Mentee"}</span>
               <div className="name_text">
                 <h3>{extraPerson.name}</h3>
-                <p>OUT IN {remainingTime} MIN</p>
+                <div>
+                  {showPurpose && <p className='purpose'>{person.purpose}</p>}
+                  {!showPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
+                </div>
               </div>
             </div>
           </animated.div>
         )}
       </div>
 
-
-      {/* </div>
-      </div> */}
     </>
   )
 }

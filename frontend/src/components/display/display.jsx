@@ -28,7 +28,7 @@ function Display() {
     }
     getData();
 
-    const intervalId = setInterval(getData, 60000);
+    const intervalId = setInterval(getData, 600000);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -37,7 +37,7 @@ function Display() {
 
   // Set up useEffect to handle auto-flipping cards
 useEffect(() => {
-  if (extraPeopleRef.current && extraPeopleRef.current.length > 35) {
+  if (extraPeopleRef.current && extraPeopleRef.current.length > 28) {
           const flipCard = (index) => {
     console.log(index + ' index');
     
@@ -60,13 +60,16 @@ useEffect(() => {
 
   let currentIndex = 0;
   let interval;
+  let timeout;
+
   const flipNextCard = () => {
     flipCard(currentIndex);
+    console.log(currentIndex,'currentIndex');
     currentIndex = (currentIndex + 1) % extraPeopleRef.current.length;
     
     if (currentIndex === 0) {
       clearInterval(interval);
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         interval = setInterval(flipNextCard, 1000);
       }, 30000);
     }
@@ -76,9 +79,12 @@ useEffect(() => {
   interval = setInterval(flipNextCard, 1000);
 
   // Clean up the interval on component unmount
-  return () => clearInterval(interval);
+  return () => {
+    clearInterval(interval);
+    clearTimeout(timeout);
+  };
 }
-}, []);
+}, [extraPeopleRef.current]);
 
 
 
@@ -89,8 +95,9 @@ useEffect(() => {
       <div className="TV_fixed">
         <div className="right_div">
           <div className="right_div_inside">
+            <div className="greet_box">
 
-            <h1> Meet & Greet</h1>
+            <h1> meet & greet</h1>
             <h2>SAY 👋🏻 TO THIS <br /> AWESOME MAKERS</h2>
             <h5>{members} MAKERS IN NOW</h5>
 
@@ -100,13 +107,14 @@ useEffect(() => {
                 <div className="scan_box1">
                   <p>DON’T SEE YOUR NAME?</p>
                   <h2>
-                    SCAN TO CHECK IN
+                    SCAN TO <br /> CHECK IN
                   </h2>
                 </div>
               </div>
 
               <p>LAST UPDATED<span> 12 MIN AGO</span></p>
 
+            </div>
             </div>
 
           </div>
