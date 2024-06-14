@@ -154,6 +154,7 @@ h5 {
   height: 24px; 
 
   font-family: 'Clash Display', sans-serif;
+  overflow: hidden;
   
 }
 .purpose_text{

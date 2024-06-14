@@ -112,6 +112,8 @@ function Display() {
 
               <h1> meet & greet</h1>
               <h2>SAY 👋🏻 TO THIS <br /> AWESOME MAKERS</h2>
+
+            
               <h5>{members} MAKERS IN NOW</h5>
 
               <div className="right_div_inside1">
