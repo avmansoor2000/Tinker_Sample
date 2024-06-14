@@ -18,7 +18,8 @@ h1 {
   border-top: 0.2px solid transparent; 
 }
 
-h2{
+
+.greet_box h2{
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -30,8 +31,6 @@ h2{
 
   width: 158px; /* Fixed width */
   height: 24px; /* Fixed height */
- 
-  /* transform: rotate(-0deg);  */
 
   font-family: 'Clash Display', sans-serif;
 }
@@ -139,6 +138,7 @@ h5 {
   border-style: solid;
   margin-top: 730px;
   justify-content: center;
+  align-items: center;
 }
 
 .scan_box img {
@@ -165,8 +165,9 @@ h5 {
 
 .scan_box1 {
   width: 77px;
-  height: 73px;
+  height: 100px;
 }
+
 
 .scan_box1 p {
   font-family: 'Clash Display', sans-serif;
@@ -177,6 +178,18 @@ h5 {
   text-align: left;
   padding: 16px 0 7px 0;
   color: #000000;
+}
+
+.scan_box1 h2{
+  width: 76px;
+  height: 42px;
+  
+  font-family: 'Clash Display', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.12px;
+  letter-spacing: -0.01em;
+  text-align: left;
 }
 
 .card_container {

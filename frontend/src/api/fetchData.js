@@ -23,8 +23,8 @@ export async function fetchData() {
     // const data = result.data;
 
   
-    const frontData = uniqueData.slice(0, 28);
-    const backData = uniqueData.slice(28, 56);
+    const frontData = uniqueData.slice(0, 28) 
+    const backData = uniqueData.slice(28, 56)
     const totalMembers = data.length;
 
     return { frontData, backData, totalMembers };

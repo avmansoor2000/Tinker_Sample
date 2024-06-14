@@ -47,21 +47,36 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
   }, [remainingTime]);
 
 
+  // Split name
+  const splitName = (name) => {
+    const [firstName, ...lastName] = name.split(' ');
+    return { firstName, lastName: lastName.join(' ') };
+  };
+
+  const { firstName, lastName } = splitName(person.name);
+  // const { EfirstName, ElastName } = splitName(extraPerson.name);
+  
+  const extraPersonName = extraPerson ? splitName(extraPerson.name) : null;
+
+
+
 
   return (
     <>
 
       <div className="card-container">
 
-        <animated.div className="card front" style={{ ...vanishingStyle, opacity: opacity.interpolate(o => 1 - o), transform }}>
+        <animated.div className={`card front ${remainingTime < 2 ? 'blink' : ''}`}
+         style={{ ...vanishingStyle, opacity: opacity.interpolate(o => 1 - o), transform }}>
+        {/* <div className="water-flow"></div> */}
           <div className="card_box" style={{ textTransform: 'uppercase' }} >
             <img src={person.avatar || temp_avatar} alt="Example" />
             <div className="mentor_tag">
               <span >{person.isMentor ? "Mentor" : "Mentee"}</span>
             </div>
             <div className="name_text">
-              <h2>{person.name}</h2>
-              <div>
+              <h2>{firstName} <br /> {lastName}</h2>
+              <div className='purpose_text'>
                 {showPurpose && <p className='purpose'>{person.purpose}</p>}
                 {!showPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
               </div>
@@ -71,14 +86,17 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
 
         {extraPerson && (
 
-          <animated.div className="card back" style={{ ...vanishingStyle, opacity, transform: transform.interpolate(t => `${t} rotateY(180deg)`) }}>
+          <animated.div className={`card front ${remainingTime < 55 ? 'blink' : ''}`}
+           style={{textTransform: 'uppercase', ...vanishingStyle, opacity, transform: transform.interpolate(t => `${t} rotateY(180deg)`) }}>
             <div className="card_box" >
-              <img src={extraPerson.avatar} alt="Example" />
-              <span className="mentor_tag">{extraPerson.isMentor ? "Mentor" : "Mentee"}</span>
+              <img src={extraPerson.avatar || temp_avatar} alt="Example" />
+              <div className="mentor_tag"> 
+              <span >{extraPerson.isMentor ? "Mentor" : "Mentee"}</span>
+              </div>
               <div className="name_text">
-                <h3>{extraPerson.name}</h3>
+                <h2>{extraPersonName.firstName} <br /> {extraPersonName.lastName}</h2>
                 <div>
-                  {showPurpose && <p className='purpose'>{person.purpose}</p>}
+                  {showPurpose && <p className='purpose'>{extraPerson.purpose}</p>}
                   {!showPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
                 </div>
               </div>
