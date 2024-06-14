@@ -4,9 +4,9 @@ import './card.css'
 import temp_avatar from '../../assets/images/avatar.jpg'
 
 function Card({ person, extraPerson, isFlipped, isVanishing }) {
-  console.log(person,'./card.css');
 
   const [showPurpose, setShowPurpose] = useState(true);
+  const [extraShowPurpose, setExtraShowPurpose] = useState(true);
 
 
   // Flip Effect
@@ -23,8 +23,9 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
     config: { duration: 1000 }
   });
 
-  // Calculate Time
+  // CALCULATE PERSON TIME
   const [remainingTime, setRemainingTime] = useState("");
+  const [extraRemainingTime, setExtraRemainingTime] = useState("");
 
   useEffect(() => {
     if (person.checkOutTime) {
@@ -37,7 +38,20 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
       setRemainingTime(`${diffMinutes} `);
     }
   }, [person.checkOutTime]);
+  // CALCULATE EXTRA PERSON TIME 
+  useEffect(() => {
+    if (extraPerson && extraPerson.checkOutTime) {
+      const checkoutTime = new Date(extraPerson.checkOutTime);
+      const currentTime = new Date();
 
+      const diffMilliseconds = checkoutTime - currentTime;
+      const diffMinutes = Math.floor(diffMilliseconds / (1000 * 60));
+
+      setExtraRemainingTime(`${diffMinutes} `);
+    }
+  }, [extraPerson, extraPerson?.checkOutTime]);
+
+    // SHOW PURPOSE OR TIME PERSON
   useEffect(() => {
     // Check if remainingTime is less than 5 minutes
     if (remainingTime < 5) {
@@ -46,9 +60,17 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
       setShowPurpose(true); // Show purpose
     }
   }, [remainingTime]);
+    // SHOW PURPOSE OR TIME FOR EXTRA PERSON
+  useEffect(() => {
+    if (extraRemainingTime < 5) {
+      setExtraShowPurpose(false); // Hide purpose
+    } else {
+      setExtraShowPurpose(true); // Show purpose
+    }
+  }, [extraRemainingTime]);
 
 
-  // Split name
+  // SPLIT NAME
   const splitName = (name) => {
     const [firstName, ...lastName] = name.split(' ');
     return { firstName, lastName: lastName.join(' ') };
@@ -96,9 +118,9 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
               </div>
               <div className="name_text">
                 <h2>{extraPersonName.firstName} <br /> {extraPersonName.lastName}</h2>
-                <div>
-                  {showPurpose && <p className='purpose'>{extraPerson.purpose}</p>}
-                  {!showPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
+                <div className='purpose_text'>
+                  {extraShowPurpose && <p className='purpose'>{extraPerson.purpose}</p>}
+                  {!extraShowPurpose && <p className='ramaining_time'>OUT IN {remainingTime} MIN</p>}
                 </div>
               </div>
             </div>

@@ -145,13 +145,13 @@ h5 {
 
 }
 
-/* .card {
+.card {
   position: absolute;
   backface-visibility: hidden;
-    height: 250px;
+    height: 276px;
     width: 217px;
     padding: 2.5px 0px 0px 0px;
-} */
+}
 
 .front {
   background-color: #fff;
@@ -176,7 +176,7 @@ h5 {
   }
 }
 
-.blink {
+/* .blink {
   animation: blink 4s infinite;
 
-}
+} */

@@ -7,7 +7,11 @@ export async function fetchData() {
     }
 
     const data = await response.json();
-    console.log(data,'Network response was not ok ');
+
+
+    // console.log(result,'result');
+    // const data = result.data;
+    // console.log(data,'data');
 
     const seenMids = new Set();
     const uniqueData = data.filter(item => {
@@ -18,30 +22,30 @@ export async function fetchData() {
         return true;
       }
     });
-    // console.log();
-    // console.log(result,'result');
-    // const data = result.data;
 
 
+    // Filter data based on checkOutTime
+    const currentTime = new Date();
+    const filteredData = uniqueData.filter(item => {
+      const checkOutTime = new Date(item.checkOutTime);
+      return checkOutTime > currentTime; // Filter items with checkOutTime in the future
+    });
 
-        // Filter data based on checkOutTime
-        const currentTime = new Date();
-        const filteredData = uniqueData.filter(item => {
-          const checkOutTime = new Date(item.checkOutTime);
-          return checkOutTime > currentTime; // Filter items with checkOutTime in the future
-        });
-    
-        // Calculate remaining time for each item
-        const dataWithRemainingTime = filteredData.map(item => {
-          const checkOutTime = new Date(item.checkOutTime);
-          const remainingTime = checkOutTime - currentTime;
-          return { ...item, remainingTime };
-        });
-        console.log(dataWithRemainingTime,'tinkerhub');
+    // Calculate remaining time for each item
+    const dataWithRemainingTime = filteredData.map(item => {
+      const checkOutTime = new Date(item.checkOutTime);
+      const remainingTime = checkOutTime - currentTime; // Calculate remaining time in milliseconds
+      return { ...item, remainingTime };
+    });
+
+    // Sort data by remaining time
+    const sortedData = dataWithRemainingTime.sort((a, b) => a.remainingTime - b.remainingTime);
+
+    // console.log(sortedData,'sortedData');
 
   
-    const frontData = data.slice(0, 28) 
-    const backData = data.slice(28, 56)
+    const frontData = sortedData.slice(0, 28) 
+    const backData = sortedData.slice(10, 20)
     const totalMembers = data.length;
 
     return { frontData, backData, totalMembers };

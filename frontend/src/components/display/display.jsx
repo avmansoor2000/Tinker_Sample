@@ -22,8 +22,8 @@ function Display() {
         if (frontData && backData && totalMembers) {
           peopleRef.current = frontData;
           extraPeopleRef.current = backData;
-          console.log(frontData, 'frontData');
-          console.log(backData, 'backData');
+          // console.log(frontData, 'frontData');
+          // console.log(backData, 'backData');
           setMembers(totalMembers)
           setFlipStates(Array(frontData.length).fill(false));
         } else {
@@ -42,20 +42,21 @@ function Display() {
 
   }, []);
 
-  // Set up useEffect to handle auto-flipping cards
+  
+  // Handle Auto-Flipping Cards
   useEffect(() => {
     if (extraPeopleRef.current.length > 0) {
       const flipCard = (index) => {
         console.log(index + ' index');
 
-        // Set the flip state of the card at the given index to true
+        // Flip State Of The Card at The Given Index to True
         setFlipStates((prevFlipStates) => {
           const newFlipStates = [...prevFlipStates];
           newFlipStates[index] = true;
           return newFlipStates;
         });
 
-        // After 30 seconds, set the flip state of the card back to false
+        // After 30 Seconds, Flip State of The Card Back to false
         setTimeout(() => {
           setFlipStates((prevFlipStates) => {
             const newFlipStates = [...prevFlipStates];
