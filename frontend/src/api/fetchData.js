@@ -7,7 +7,7 @@ export async function fetchData() {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log(data,'Network response was not ok ');
 
     const seenMids = new Set();
     const uniqueData = data.filter(item => {

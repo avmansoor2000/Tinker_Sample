@@ -4,6 +4,7 @@ import './card.css'
 import temp_avatar from '../../assets/images/avatar.jpg'
 
 function Card({ person, extraPerson, isFlipped, isVanishing }) {
+  console.log(person,'./card.css');
 
   const [showPurpose, setShowPurpose] = useState(true);
 

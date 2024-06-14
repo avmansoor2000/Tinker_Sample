@@ -19,22 +19,27 @@ function Display() {
   useEffect(() => {
     async function getData() {
       try {
+
         const { frontData, backData, totalMembers } = await fetchData();
         // console.log(frontData, "fornt Data");
+        if (frontData && backData && totalMembers) {
         peopleRef.current = frontData;
         extraPeopleRef.current = backData;
         console.log(frontData, 'frontData');
         console.log(backData, 'backData');
         setMembers(totalMembers)
         setFlipStates(Array(frontData.length).fill(false));
+      } else {
+        console.error('Data fetching returned incomplete or invalid data.');
+      }
       } catch (error) {
-        console.log();
+        console.log('Error fetching data:', error);
 
       }
     }
     getData();
 
-    const intervalId = setInterval(getData, 100000);
+    const intervalId = setInterval(getData, 60000);
     return () => clearInterval(intervalId);
 
 
