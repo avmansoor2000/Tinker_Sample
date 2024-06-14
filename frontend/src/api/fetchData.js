@@ -22,9 +22,26 @@ export async function fetchData() {
     // console.log(result,'result');
     // const data = result.data;
 
+
+
+        // Filter data based on checkOutTime
+        const currentTime = new Date();
+        const filteredData = uniqueData.filter(item => {
+          const checkOutTime = new Date(item.checkOutTime);
+          return checkOutTime > currentTime; // Filter items with checkOutTime in the future
+        });
+    
+        // Calculate remaining time for each item
+        const dataWithRemainingTime = filteredData.map(item => {
+          const checkOutTime = new Date(item.checkOutTime);
+          const remainingTime = checkOutTime - currentTime;
+          return { ...item, remainingTime };
+        });
+        console.log(dataWithRemainingTime,'tinkerhub');
+
   
-    const frontData = uniqueData.slice(0, 28) 
-    const backData = uniqueData.slice(28, 56)
+    const frontData = data.slice(0, 28) 
+    const backData = data.slice(28, 56)
     const totalMembers = data.length;
 
     return { frontData, backData, totalMembers };

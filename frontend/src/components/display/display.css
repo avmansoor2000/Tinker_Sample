@@ -3,7 +3,7 @@
   
 }
 
-h1 {
+.greet_box h1 {
   font-size: 50px;
   font-style: italic;
   font-weight: 600;
@@ -35,36 +35,24 @@ h1 {
   font-family: 'Clash Display', sans-serif;
 }
 
-/* h3 {
+/* h3{
   font-size: 12px;
   font-weight: 600;
   line-height: 12px;
   letter-spacing: -0.01em;
   text-align: left;
   padding: 0 0 10px 6px;
+  font-family: 'Clash Display', sans-serif;
+
 } */
 
-h3{
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 12px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  padding: 0 0 10px 6px;
-  font-family: 'Clash Display', sans-serif; /* Font family */
-  /* width: 134px;  */
-  /* height: 24px;  */
-  /* transform: rotate(-0deg);  */
-
-}
-
-.custom-element {
+/* .custom-element {
   width: 10px;
   height: 10px;
   gap: 0px;
   border-radius: 50%;
   background: #19CE85;
-}
+} */
 
 .greet_box h5 {
   font-family: 'Clash Display', sans-serif; 
@@ -85,12 +73,13 @@ h3{
   /* position: absolute;  */
   /* top: 100px;  */
   /* left: 332px;  */
-  padding: 4px;
+  /* padding: 6px; */
   
 }
 
 .right_div_inside {
   margin: 32px 24px 32px 24px;
+  /* padding: 32px; */
   width: 246px;
   height: 720px;
   gap: 16px;
@@ -156,22 +145,6 @@ h3{
   padding: 16px 16px 16px 16px;
 }
 
-/* .img_div {
-    position: relative;;
-  } */
-/* .mentor_tag {
-  width: 28px;
-  height: 6px;
-  padding: 4px 8px 4px 8px;
-  border-radius: 14px;
-  background: radial-gradient(circle at center, #FFF6A5 0%, #FFD43B 100%);
-  font-family: Clash Display;
-  font-size: 6px;
-  font-weight: 600;
-  line-height: 5.4px;
-  margin: 109px -57px;
-} */
-
 .scan_box1 {
   width: 77px;
   height: 100px;
@@ -202,54 +175,20 @@ h3{
 }
 
 .card_container {
-  /* height: 720px; */
-  /* width: 1280; */
-  /* background: #ef8ee5; */
-  width: 1022px;
-  /* Fixed width */
-  height: 708px;
-  /* Hug height */
-  top: 6px;
+  /* width: 1022px; */
+  /* height: 708px; */
+  /* top: 6px; */
   left: 252px;
-  gap: 0px;
-  /* Gap */
-  /* opacity: 0; */
-  /* Opacity (assuming 0 means fully transparent) */
-
-
-
+  /* gap: 0px; */
   flex: 1;
   flex-direction: column;
+  /* background-color: red; */
+  padding: 16px;
 }
 
 .card_row {
-  /* height: 1000px; */
-  /* width: 2180px; */
+  width: 100%;
+  /* height: 99%; */
   display: flex;
   flex-wrap: wrap;
-  /* flex: 1; */
 }
-
-.card_box img {
-  /* width: 134px; */
-  /* height: 110px; */
-  width: 100%;
-  height: 70%;
-  /* padding: 6px 6px 16px 6px; */
-}
-
-/* .name_text {
-  width: 134px;
-  height: 39px;
-
-} */
-
-/* .name_text p {
-  font-family: General Sans;
-  font-size: 6px;
-  font-weight: 600;
-  line-height: 5.4px;
-  text-align: left;
-  padding-left: 6px;
-  color: #FD9800;
-} */

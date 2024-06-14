@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import scanCodeImage from '../../assets/images/scan_code.png';
 import { fetchData } from "../../api/fetchData"
 
-
 function Display() {
 
   const peopleRef = useRef([]);
@@ -12,8 +11,6 @@ function Display() {
   // const [vanishingIndices, setVanishingIndices] = useState([]);
   const [flipStates, setFlipStates] = useState([]);
   const [members, setMembers] = useState(0);
-
-
 
   // Fetch data and set states
   useEffect(() => {
@@ -23,15 +20,15 @@ function Display() {
         const { frontData, backData, totalMembers } = await fetchData();
         // console.log(frontData, "fornt Data");
         if (frontData && backData && totalMembers) {
-        peopleRef.current = frontData;
-        extraPeopleRef.current = backData;
-        console.log(frontData, 'frontData');
-        console.log(backData, 'backData');
-        setMembers(totalMembers)
-        setFlipStates(Array(frontData.length).fill(false));
-      } else {
-        console.error('Data fetching returned incomplete or invalid data.');
-      }
+          peopleRef.current = frontData;
+          extraPeopleRef.current = backData;
+          console.log(frontData, 'frontData');
+          console.log(backData, 'backData');
+          setMembers(totalMembers)
+          setFlipStates(Array(frontData.length).fill(false));
+        } else {
+          console.error('Data fetching returned incomplete or invalid data.');
+        }
       } catch (error) {
         console.log('Error fetching data:', error);
 
@@ -44,9 +41,6 @@ function Display() {
 
 
   }, []);
-
-
-
 
   // Set up useEffect to handle auto-flipping cards
   useEffect(() => {
@@ -99,12 +93,8 @@ function Display() {
     }
   }, [peopleRef.current.length, extraPeopleRef.current.length]);
 
-
-
   return (
     <>
-
-
       <div className="TV_fixed">
         <div className="right_div">
           <div className="right_div_inside">
@@ -113,7 +103,7 @@ function Display() {
               <h1> meet & greet</h1>
               <h2>SAY 👋🏻 TO THIS <br /> AWESOME MAKERS</h2>
 
-            
+
               <h5>{members} MAKERS IN NOW</h5>
 
               <div className="right_div_inside1">
@@ -146,7 +136,7 @@ function Display() {
                 person={person}
                 extraPerson={extraPeopleRef.current[index]}
                 isFlipped={flipStates[index]}
-                // isVanishing={vanishingIndices.includes(index)}
+              // isVanishing={vanishingIndices.includes(index)}
               />
               // </Thanos>
             ))}
