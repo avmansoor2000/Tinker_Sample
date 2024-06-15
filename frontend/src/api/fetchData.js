@@ -7,6 +7,7 @@ export async function fetchData() {
     }
 
     const data = await response.json();
+    console.log(data,'data');
 
 
     // console.log(result,'result');
@@ -22,6 +23,7 @@ export async function fetchData() {
         return true;
       }
     });
+    console.log(uniqueData+'uniqueData');
 
 
     // Filter data based on checkOutTime
@@ -30,22 +32,24 @@ export async function fetchData() {
       const checkOutTime = new Date(item.checkOutTime);
       return checkOutTime > currentTime; // Filter items with checkOutTime in the future
     });
+    // console.log(filteredData,'filteredData ');
 
     // Calculate remaining time for each item
     const dataWithRemainingTime = filteredData.map(item => {
       const checkOutTime = new Date(item.checkOutTime);
-      const remainingTime = checkOutTime - currentTime; // Calculate remaining time in milliseconds
+      const remainingTime = checkOutTime - currentTime;
       return { ...item, remainingTime };
     });
 
     // Sort data by remaining time
     const sortedData = dataWithRemainingTime.sort((a, b) => a.remainingTime - b.remainingTime);
+    // console.log(sortedData+'sortedData');
 
     // console.log(sortedData,'sortedData');
 
   
     const frontData = sortedData.slice(0, 28) 
-    const backData = sortedData.slice(10, 20)
+    const backData = sortedData.slice(28, 56)
     const totalMembers = data.length;
 
     return { frontData, backData, totalMembers };
