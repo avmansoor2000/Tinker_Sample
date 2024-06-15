@@ -118,7 +118,7 @@ function Display() {
                   </div>
                 </div>
 
-                <p>LAST UPDATED<span> 2 MIN AGO</span></p>
+                 {/* <p>LAST UPDATED<span> 2 MIN AGO</span></p> */}
 
               </div>
             </div>

@@ -50,7 +50,8 @@ h5 {
 .card_box {
   /* height: 250px;
   width: 217px; */
-  height: 276px;
+  
+  height: 260px;
   width: 222px;
   /* padding: 2.5px 0px 0px 0px; */
   /* padding: 4px; */
@@ -136,7 +137,7 @@ h5 {
 /*extra css */
 
 .card-container {
-  height: 276px;
+  height: 260px;
   width: 217px;
   perspective: 1000px;
   /* margin: 10px; */
