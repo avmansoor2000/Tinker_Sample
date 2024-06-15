@@ -4,7 +4,7 @@
 }
 
 .greet_box h1 {
-  font-size: 50px;
+  font-size: 58px;
   font-style: italic;
   font-weight: 600;
   line-height: 36px;
@@ -67,9 +67,10 @@
 }
 
 .TV_fixed {
-  width: 1850px;
+  width: 1950px;
   height: 1090px;
   display: flex;
+  /* background-color: red; */
   /* background-color: red; */
   /* position: absolute;  */
   /* top: 100px;  */
@@ -77,10 +78,19 @@
   /* padding: 6px; */
   
 }
+.right_div{
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  margin: 32px 24px 32px 24px;
+
+}
 
 .right_div_inside {
-  margin: 32px 24px 32px 24px;
-  /* padding: 32px; */
+  /* margin: 32px 24px 32px 24px; */
+  padding: 25px;
   width: 246px;
   height: 720px;
   gap: 16px;
@@ -91,20 +101,23 @@
 }
 
 .greet_box{
-  width: 198px; /* Fixed width */
+  width: 236px; /* Fixed width */
   height: 133px; /* Hug height */
   gap: 16px; /* Gap */
   justify-content: center;
   align-items: center;
+  /* background-color: red; */
 }
 
 .right_div_inside1 {
-  width: 198px;
-  /* Fill width */
-  height: 131px;
+  /* width: 198px;
+  height: 131px; */
+  width: 235px;
+  height: 165px;
   /* Hug height */
   gap: 16px;
   /* Gap between elements */
+  /* background-color: green; */
 }
 
 .right_div_inside1 p {
@@ -128,7 +141,7 @@
 }
 
 .scan_box {
-  width: 198px;
+  width: 236px;
   height: 131px;
   border-radius: 11px;
   display: flex;
