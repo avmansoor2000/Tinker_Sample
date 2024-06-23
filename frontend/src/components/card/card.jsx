@@ -94,9 +94,11 @@ function Card({ person, extraPerson, isFlipped, isVanishing }) {
         {/* <div className="water-flow"></div> */}
           <div className="card_box" style={{ textTransform: 'uppercase' }} >
             <img src={person.avatar || temp_avatar} alt="Example" />
-            <div className="mentor_tag">
-              <span >{person.isMentor ? "Mentor" : "Mentee"}</span>
-            </div>
+            {person.isMentor && (
+        <div className="mentor_tag">
+            <span>Mentor</span>
+        </div>
+    )}
             <div className="name_text">
               <h2>{firstName} <br /> {lastName}</h2>
               <div className='purpose_text'>

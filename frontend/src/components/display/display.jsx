@@ -105,7 +105,7 @@ function Display() {
               <h2>SAY 👋🏻 TO THIS <br /> AWESOME MAKERS</h2>
 
 
-              <h5>{members} MAKERS IN NOW</h5>
+              <h5 ><span class="dot"></span>{members} MAKERS IN NOW</h5>
 
               <div className="right_div_inside1">
                 <div className='scan_box'>
