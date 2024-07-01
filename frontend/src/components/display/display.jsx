@@ -8,7 +8,6 @@ function Display() {
 
   const peopleRef = useRef([]);
   const extraPeopleRef = useRef([]);
-  // const [vanishingIndices, setVanishingIndices] = useState([]);
   const [flipStates, setFlipStates] = useState([]);
   const [members, setMembers] = useState(0);
 
@@ -63,7 +62,7 @@ function Display() {
             newFlipStates[index] = false;
             return newFlipStates;
           });
-        }, 30000);
+        }, 60000);
       };
 
       let currentIndex = 0;
@@ -79,7 +78,7 @@ function Display() {
           clearInterval(interval);
           timeout = setTimeout(() => {
             interval = setInterval(flipNextCard, 1000);
-          }, 30000);
+          }, 60000);
         }
       };
 
@@ -131,15 +130,13 @@ function Display() {
           <div className="card_row">
 
             {peopleRef.current.map((person, index) => (
-              // <Thanos snap={snap}>
               <Card
                 key={person.id}
                 person={person}
                 extraPerson={extraPeopleRef.current[index]}
                 isFlipped={flipStates[index]}
-              // isVanishing={vanishingIndices.includes(index)}
               />
-              // </Thanos>
+             
             ))}
           </div>
 
