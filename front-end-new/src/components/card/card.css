@@ -55,7 +55,7 @@ h5 {
   width: 215px;
   /* padding: 2.5px 0px 0px 0px; */
   /* padding: 4px; */
-  border-width: 1.6px;
+  border-width: 1px;
   border-color: #EBEBEB;
   border-style: solid;
   /* margin: 4px; */
@@ -138,7 +138,7 @@ h5 {
 
 .card-container {
   height: 264px;
-  width: 217px;
+  width: 216px;
   perspective: 1000px;
   /* margin: 10px; */
   position: relative;

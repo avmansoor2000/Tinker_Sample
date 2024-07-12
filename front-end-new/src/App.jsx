@@ -4,7 +4,7 @@ import Display from './components/display/display'
 const App = () => {
   return (
     <>
-        <Display/>
+        <Display/>  
     </>
   )
 }

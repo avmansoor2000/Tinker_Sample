@@ -50,7 +50,7 @@ export async function fetchData() {
   
     const frontData = sortedData.slice(0, 28) 
     const backData = sortedData.slice(28, 56)
-    const totalMembers = data.length;
+    const totalMembers = sortedData.length;
 
     return { frontData, backData, totalMembers };
   } catch (error) {

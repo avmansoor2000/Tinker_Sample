@@ -4,7 +4,7 @@
 }
 
 .greet_box h1 {
-  font-size: 58px;
+  font-size: 62px;
   font-style: italic;
   font-weight: 500;
   line-height: 36px;
@@ -69,7 +69,6 @@
   height: 1090px;
   display: flex;
   /* background-color: red; */
-
   /* background-color: red; */
   /* background-color: red; */
   /* position: absolute;  */
@@ -101,7 +100,7 @@
 }
 
 .greet_box{
-  width: 236px; /* Fixed width */
+  width: 246px; /* Fixed width */
   height: 150px; /* Hug height */
   gap: 16px; /* Gap */
   justify-content: center;
